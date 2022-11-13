@@ -1,3 +1,4 @@
+import { sanitizeSpecialChars } from './util';
 
 export interface Issue {
 	id: number;
@@ -21,9 +22,7 @@ export class GitlabIssue implements Issue {
 	project: GitlabProject;
 
 	get filename() {
-		return this.title
-			.replace(/[:]/g, '')
-			.replace(/[*"/\\<>|?]/g, '-');
+		return sanitizeSpecialChars(this.title);
 	}
 
 	constructor(issue: Issue) {
