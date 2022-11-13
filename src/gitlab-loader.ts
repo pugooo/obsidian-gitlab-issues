@@ -5,13 +5,10 @@ import {GitlabIssuesSettings} from "./settings";
 import Filesystem from "./filesystem";
 
 export default class GitlabLoader {
-
-	private app: App;
 	private fs: Filesystem;
 	private settings: GitlabIssuesSettings;
 
 	constructor(app: App, settings: GitlabIssuesSettings) {
-		this.app = app;
 		this.fs = new Filesystem(app.vault, settings);
 		this.settings = settings;
 	}

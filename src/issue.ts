@@ -11,7 +11,6 @@ export interface Issue {
 }
 
 export class GitlabIssue implements Issue {
-
 	id: number;
 	title: string;
 	description: string;

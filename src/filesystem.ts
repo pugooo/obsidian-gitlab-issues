@@ -6,9 +6,7 @@ import {compile} from 'handlebars';
 import defaultTemplate from './default-template';
 
 export default class Filesystem {
-
 	private vault: Vault;
-
 	private settings: GitlabIssuesSettings;
 
 	constructor(vault: Vault, settings: GitlabIssuesSettings) {
