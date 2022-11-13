@@ -50,9 +50,7 @@ export class GitlabProject implements Project {
 	web_url: string;
 
 	get foldername() {
-		return this.name
-			.replace(/[:]/g, '')
-			.replace(/[*"/\\<>|?]/g, '-');
+		return sanitizeSpecialChars(this.name);
 	}
 
 	constructor(project: Project) {
